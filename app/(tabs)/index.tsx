@@ -1,31 +1,28 @@
-import { StyleSheet } from 'react-native';
+import { styled } from 'nativewind'
+import EditScreenInfo from '../../components/EditScreenInfo'
+import { Text as RNText, View as RNView } from '../../components/Themed'
+import { SafeAreaView } from 'react-native'
+import Login from '../../components/Login'
 
-import EditScreenInfo from '../../components/EditScreenInfo';
-import { Text, View } from '../../components/Themed';
+const SafeArea = styled(SafeAreaView)
+
+const Text = styled(RNText)
+const View = styled(RNView)
 
 export default function TabOneScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
-    </View>
-  );
-}
+    <SafeArea className="flex-1 items-center justify-center">
+      <View className="flex-1 items-center justify-center">
+        <Text className="text-lg font-bold">Tab One</Text>
+        <View
+          className="my-8 h-px w-4/5"
+          lightColor="#eee"
+          darkColor="rgba(255,255,255,0.1)"
+        />
+        <Login />
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
+        <EditScreenInfo path="app/(tabs)/index.tsx" />
+      </View>
+    </SafeArea>
+  )
+}

@@ -1,11 +1,11 @@
 {
   "expo": {
     "name": "expo102",
-    "slug": "expo102",
+    "slug": "expo-202",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "expo102",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
@@ -34,6 +34,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "18c1836e-35b7-416e-9936-5b0812e59ab2"
+      }
+    },
+    "owner": "zanef"
   }
 }
